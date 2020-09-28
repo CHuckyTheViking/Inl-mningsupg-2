@@ -7,13 +7,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="500" Height="600" Width="490">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
 
-        <StackPanel>
-            <TextBlock Text="{Binding SelectedContact.Name}" FontSize="16"/>
-            <TextBlock Text="{Binding SelectedContact.Work}" FontSize="16"/>
-            <TextBlock Text="{Binding SelectedContact.Email}" FontSize="16"/>
-            <TextBlock Text="{Binding SelectedContact.Phone}" FontSize="16"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+        <Image Grid.Column="1" Grid.Row="0" Margin="15" Source="{Binding SelectedContact.ImageSource}"/>
+
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <TextBlock Text="{Binding SelectedContact.Name}" FontSize="16" HorizontalAlignment="Center" Margin="5,15"/>
+            <TextBlock Text="{Binding SelectedContact.Work}" FontSize="14" FontStyle="Oblique" HorizontalAlignment="Center" Margin="5,5" FontWeight="Bold"/>
+             <TextBlock Text="{Binding SelectedContact.Email}" FontSize="16" HorizontalAlignment="Center" Margin="5,5"/>
+            <TextBlock Text="{Binding SelectedContact.Phone}" FontSize="16" HorizontalAlignment="Center" Margin="5,5"/>
         </StackPanel>
             
     </Grid>

@@ -49,8 +49,6 @@ namespace MailApplication.ViewModels
             return !IsDisplayMode;
         }
 
-
-
         public void LoadMessages(IEnumerable<MessageModel> messages)
         {
             Messages = new ObservableCollection<MessageModel>(messages);

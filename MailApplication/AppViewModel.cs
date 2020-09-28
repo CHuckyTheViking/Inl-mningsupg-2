@@ -39,11 +39,6 @@ namespace MailApplication
         public AppViewModel()
         {
 
-            ContactListVM = new ContactListViewModel(dataContactService);
-            CurrentView = ContactListVM;
-
-            MessageListVM = new MessageListViewModel(dataMessageService);
-            CurrentView = MessageListVM;
         }
 
         public AppViewModel(string val)
@@ -59,19 +54,7 @@ namespace MailApplication
                 CurrentView = MessageListVM;
             }
         }
-   
-        public void GotoMessageListVM()
-        {
-            MessageListVM = new MessageListViewModel(dataMessageService);
-            CurrentView = MessageListVM;
 
-        }
-
-        public void GotoContactListVM()
-        {
-            ContactListVM = new ContactListViewModel(dataContactService);
-            CurrentView = ContactListVM;
-        }
     }
 
     
