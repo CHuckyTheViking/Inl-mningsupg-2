@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="MailApplication.Views.ContactDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MailApplication.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="500" Height="600" Width="490">
+    <Grid>
+
+        <StackPanel>
+            <TextBlock Text="{Binding SelectedContact.Name}" FontSize="16"/>
+            <TextBlock Text="{Binding SelectedContact.Work}" FontSize="16"/>
+            <TextBlock Text="{Binding SelectedContact.Email}" FontSize="16"/>
+            <TextBlock Text="{Binding SelectedContact.Phone}" FontSize="16"/>
+
+        </StackPanel>
+            
+    </Grid>
+</UserControl>

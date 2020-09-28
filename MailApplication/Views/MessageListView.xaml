@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="MailApplication.Views.MessageListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MailApplication.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="750">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <ListView ItemsSource="{Binding MessageDetailVM.Messages}" SelectedItem="{Binding MessageDetailVM.SelectedMessage}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:MessageItemView/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <ContentControl>
+                <ContentControl.Content>
+                    <local:MessageDetailView DataContext="{Binding MessageDetailVM}" HorizontalAlignment="Left"/>
+                </ContentControl.Content>
+            </ContentControl>
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MailApplication.Views.MessageItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MailApplication.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="65" d:DesignWidth="240" Height="65" Width="240">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Column="0" Margin="8" Source="{Binding ImageSource,
+            FallbackValue={StaticResource DefaultMessageImage},TargetNullValue={StaticResource DefaultMessageImage}}"/>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,0">
+            <TextBlock x:Name="FromName" Text="{Binding FromName}" FontSize="16" Margin="20,5,0,10"/>
+            <TextBlock x:Name="MessageHeadline" Text="{Binding MessageHeadline}" FontSize="10" FontWeight="Bold" Margin="10,5,0,10"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
